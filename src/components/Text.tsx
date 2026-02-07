@@ -6,6 +6,7 @@ import {
 	useContext,
 } from "react";
 import { z } from "zod";
+import { type AriaRole, AriaRoleSchema } from "../accessibility/aria";
 import { type ColorSpec, ColorSpecSchema } from "../color";
 import { BackgroundColorContext } from "./Box";
 
@@ -56,7 +57,7 @@ export const InheritedTextStyleContext = createContext<TextStyleContext>({});
 // ---------------------------------------------------------------------------
 
 export const TextAriaPropsSchema = z.object({
-	"aria-role": z.string().optional(),
+	"aria-role": AriaRoleSchema.optional(),
 	"aria-label": z.string().optional(),
 	"aria-hidden": z.boolean().optional(),
 });
@@ -78,7 +79,7 @@ export const TextComponentPropsSchema = z.object({
 	inverse: z.boolean().optional(),
 	dimColor: z.boolean().optional(),
 	wrap: TextWrapModeSchema.optional(),
-	"aria-role": z.string().optional(),
+	"aria-role": AriaRoleSchema.optional(),
 	"aria-label": z.string().optional(),
 	"aria-hidden": z.boolean().optional(),
 });
@@ -94,7 +95,7 @@ export type TextComponentProps = {
 	readonly inverse?: boolean;
 	readonly dimColor?: boolean;
 	readonly wrap?: TextWrapMode;
-	readonly "aria-role"?: string;
+	readonly "aria-role"?: AriaRole;
 	readonly "aria-label"?: string;
 	readonly "aria-hidden"?: boolean;
 };

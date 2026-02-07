@@ -25,7 +25,7 @@ describe("AriaPropsSchema", () => {
 			"aria-role": "button",
 			"aria-label": "Submit",
 			"aria-hidden": true,
-			"aria-state": "active",
+			"aria-state": { disabled: true },
 		};
 		expect(AriaPropsSchema.parse(props)).toEqual(props);
 	});

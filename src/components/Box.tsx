@@ -6,6 +6,12 @@ import {
 	useContext,
 } from "react";
 import { z } from "zod";
+import {
+	type AriaProps,
+	AriaPropsSchema,
+	AriaRoleSchema,
+	AriaStateSchema,
+} from "../accessibility/aria";
 import { type Styles, StylesSchema } from "../styles";
 
 // ---------------------------------------------------------------------------
@@ -16,18 +22,8 @@ export const BackgroundColorContext = createContext<string | undefined>(
 	undefined,
 );
 
-// ---------------------------------------------------------------------------
-// ARIA props schema
-// ---------------------------------------------------------------------------
-
-export const AriaPropsSchema = z.object({
-	"aria-role": z.string().optional(),
-	"aria-label": z.string().optional(),
-	"aria-hidden": z.boolean().optional(),
-	"aria-state": z.string().optional(),
-});
-
-export type AriaProps = z.infer<typeof AriaPropsSchema>;
+// Re-export ARIA types for backwards compatibility
+export { type AriaProps, AriaPropsSchema };
 
 // ---------------------------------------------------------------------------
 // Box props schema
@@ -35,10 +31,10 @@ export type AriaProps = z.infer<typeof AriaPropsSchema>;
 
 export const BoxComponentPropsSchema = StylesSchema.extend({
 	children: z.unknown().optional(),
-	"aria-role": z.string().optional(),
+	"aria-role": AriaRoleSchema.optional(),
 	"aria-label": z.string().optional(),
 	"aria-hidden": z.boolean().optional(),
-	"aria-state": z.string().optional(),
+	"aria-state": AriaStateSchema.optional(),
 });
 
 export type BoxComponentProps = Styles &
