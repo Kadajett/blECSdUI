@@ -79,6 +79,8 @@ export {
 } from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { StderrContextValue } from "./contexts/stderr";
+export { StderrContext } from "./contexts/stderr";
 export type {
 	ElementNode,
 	NodeType,
@@ -130,6 +132,7 @@ export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
 export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
 export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
 export { useFocusManager } from "./hooks/use-focus-manager";
+export { useStderr } from "./hooks/use-stderr";
 export type {
 	BoxProps,
 	Container,
