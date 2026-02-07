@@ -294,6 +294,16 @@ export {
 	createLogUpdate,
 	LogUpdateOptionsSchema,
 } from "./rendering/terminal-output";
+export type {
+	ResizableStream,
+	ResizeCallbacks,
+	ResizeHandler,
+	ResizeHandlerOptions,
+} from "./resize-handler";
+export {
+	createResizeHandler,
+	ResizeHandlerOptionsSchema,
+} from "./resize-handler";
 export {
 	type AlignItems,
 	AlignItemsSchema,
