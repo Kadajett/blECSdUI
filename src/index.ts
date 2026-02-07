@@ -33,3 +33,28 @@ export {
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export { render } from "./render";
+export {
+	type AlignItems,
+	AlignItemsSchema,
+	type AlignSelf,
+	AlignSelfSchema,
+	type BorderStyle,
+	BorderStyleSchema,
+	type Display,
+	DisplaySchema,
+	type FlexDirection,
+	FlexDirectionSchema,
+	type FlexWrap,
+	FlexWrapSchema,
+	type JustifyContent,
+	JustifyContentSchema,
+	type Overflow,
+	OverflowSchema,
+	type Position,
+	PositionSchema,
+	parseStyles,
+	type Styles,
+	StylesSchema,
+	type TextWrap,
+	TextWrapSchema,
+} from "./styles";
