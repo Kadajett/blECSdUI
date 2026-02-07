@@ -39,7 +39,39 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type {
+	BoxProps,
+	Container,
+	EcsInstance,
+	ElementType,
+	HostContext,
+	TextInstance,
+	TextProps,
+} from "./host-config";
+
+export {
+	appendChild,
+	commitTextUpdate,
+	commitUpdate,
+	createInstance,
+	createTextInstance,
+	diffProps,
+	ElementTypeSchema,
+	getChildHostContext,
+	getPublicInstance,
+	getRootHostContext,
+	insertBefore,
+	removeChild,
+	resetAfterCommit,
+} from "./host-config";
+export {
+	createContainer,
+	createRootContainer,
+	reconciler,
+	renderElement,
+} from "./reconciler";
 export { render } from "./render";
+
 export {
 	type AlignItems,
 	AlignItemsSchema,
