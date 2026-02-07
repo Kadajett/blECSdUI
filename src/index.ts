@@ -69,6 +69,8 @@ export {
 } from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { StdinContextValue } from "./contexts/stdin";
+export { StdinContext } from "./contexts/stdin";
 export type {
 	ElementNode,
 	NodeType,
@@ -92,6 +94,7 @@ export {
 } from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
+export { useStdin } from "./hooks/use-stdin";
 export type {
 	BoxProps,
 	Container,
