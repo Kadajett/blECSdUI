@@ -39,6 +39,25 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export {
+	type ChildLayout,
+	ChildLayoutSchema,
+	calculateFlexLayout,
+	calculateLineCrossSize,
+	createFlexLines,
+	type FlexContainer,
+	FlexContainerSchema,
+	type FlexItem,
+	FlexItemSchema,
+	getCrossGap,
+	getMainGap,
+	isReversedDirection,
+	isRowDirection,
+	positionItemOnCrossAxis,
+	positionLinesOnCrossAxis,
+	positionOnMainAxis,
+	resolveFlexSizes,
+} from "./layout/flex";
 export { render } from "./render";
 export {
 	type AlignItems,
