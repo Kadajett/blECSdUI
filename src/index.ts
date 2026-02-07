@@ -39,8 +39,6 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
-export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
-export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export type {
 	ElementNode,
 	NodeType,
@@ -62,6 +60,8 @@ export {
 	walkTree,
 	walkTreeBottomUp,
 } from "./element-tree";
+export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
+export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export type {
 	BoxProps,
 	Container,
@@ -133,5 +133,21 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export type {
+	ClipRegion,
+	OutputBuffer,
+	OutputTransformer,
+	WriteOptions,
+} from "./rendering/output-buffer";
+export {
+	ClipRegionSchema,
+	WriteOptionsSchema,
+	createOutputBuffer,
+	getBufferContent,
+	getBufferHeight,
+	popClip,
+	pushClip,
+	writeToBuffer,
+} from "./rendering/output-buffer";
 export type { RenderThrottle, ThrottleConfig } from "./throttle";
 export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
