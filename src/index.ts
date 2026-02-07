@@ -134,6 +134,23 @@ export {
 	TextWrapSchema,
 } from "./styles";
 export type {
+	BorderCharset,
+	BorderColorConfig,
+	BorderSides,
+	BorderStyleName,
+	RenderBorderOptions,
+} from "./rendering/border";
+export {
+	BORDER_STYLES,
+	BorderCharsetSchema,
+	BorderColorConfigSchema,
+	BorderSidesSchema,
+	BorderStyleNameSchema,
+	RenderBorderOptionsSchema,
+	renderBorder,
+	resolveBorderCharset,
+} from "./rendering/border";
+export type {
 	ClipRegion,
 	OutputBuffer,
 	OutputTransformer,
