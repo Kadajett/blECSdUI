@@ -46,6 +46,12 @@ export {
 	BoxComponentPropsSchema,
 } from "./components/Box";
 export {
+	Newline,
+	type NewlineProps,
+	NewlinePropsSchema,
+} from "./components/Newline";
+export { Spacer } from "./components/Spacer";
+export {
 	InheritedTextStyleContext,
 	mergeTextStyles,
 	Text,
@@ -56,6 +62,11 @@ export {
 	type TextWrapMode,
 	TextWrapModeSchema,
 } from "./components/Text";
+export {
+	Transform,
+	type TransformProps,
+	TransformPropsSchema,
+} from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type {
@@ -274,6 +285,15 @@ export {
 	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
+export {
+	applyTransformer,
+	applyTransformers,
+	composeTransformers,
+	IDENTITY_TRANSFORMER,
+	type OutputTransformer as TransformerOutputTransformer,
+	type TransformerPipeline,
+	TransformerPipelineSchema,
+} from "./rendering/transformers";
 export type {
 	NodeLayoutMap,
 	NodeRegistry,
@@ -319,5 +339,33 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export {
+	clearMeasureCache,
+	configureMeasureCache,
+	getMeasureCacheSize,
+	type MeasureCacheConfig,
+	MeasureCacheConfigSchema,
+	type MeasureResult,
+	MeasureResultSchema,
+	measureText,
+} from "./text/measure-text";
+export {
+	applyStyle,
+	getTextSegments,
+	mergeStyles,
+	squashTextNodes,
+	type TextNodeData,
+	type TextSegment,
+	TextSegmentSchema,
+	type TextStyle,
+	TextStyleSchema,
+} from "./text/squash-text-nodes";
+export {
+	type WrapMode,
+	WrapModeSchema,
+	type WrapOptions,
+	WrapOptionsSchema,
+	wrapText,
+} from "./text/wrap-text";
 export type { RenderThrottle, ThrottleConfig } from "./throttle";
 export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
