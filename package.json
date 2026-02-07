@@ -14,7 +14,9 @@
 		"format": "biome format --write .",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"test:coverage": "vitest run --coverage"
+		"test:coverage": "vitest run --coverage",
+		"demo:chat": "tsx examples/chat.tsx",
+		"demo:chat:10k": "CHAT_SEED_COUNT=10000 tsx examples/chat.tsx"
 	},
 	"repository": {
 		"type": "git",
