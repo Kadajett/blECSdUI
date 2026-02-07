@@ -67,6 +67,14 @@ export {
 	type TransformProps,
 	TransformPropsSchema,
 } from "./components/Transform";
+export type { AppContextValue } from "./contexts/app";
+export { AppContext, AppContextValueSchema } from "./contexts/app";
+export type { StderrContextValue } from "./contexts/stderr";
+export { StderrContext } from "./contexts/stderr";
+export type { StdinContextValue } from "./contexts/stdin";
+export { StdinContext } from "./contexts/stdin";
+export type { StdoutContextValue } from "./contexts/stdout";
+export { StdoutContext } from "./contexts/stdout";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type {
@@ -116,6 +124,12 @@ export {
 	removeChild,
 	resetAfterCommit,
 } from "./host-config";
+export { useApp } from "./hooks/use-app";
+export type { InputHandler, UseInputOptions } from "./hooks/use-input";
+export { useInput, UseInputOptionsSchema } from "./hooks/use-input";
+export { useStderr } from "./hooks/use-stderr";
+export { useStdin } from "./hooks/use-stdin";
+export { useStdout } from "./hooks/use-stdout";
 export type { Key, KeypressResult } from "./input/parse-keypress";
 export {
 	KeypressResultSchema,
@@ -285,15 +299,6 @@ export {
 	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
-export {
-	applyTransformer,
-	applyTransformers,
-	composeTransformers,
-	IDENTITY_TRANSFORMER,
-	type OutputTransformer as TransformerOutputTransformer,
-	type TransformerPipeline,
-	TransformerPipelineSchema,
-} from "./rendering/transformers";
 export type {
 	NodeLayoutMap,
 	NodeRegistry,
@@ -314,6 +319,15 @@ export {
 	createLogUpdate,
 	LogUpdateOptionsSchema,
 } from "./rendering/terminal-output";
+export {
+	applyTransformer,
+	applyTransformers,
+	composeTransformers,
+	IDENTITY_TRANSFORMER,
+	type OutputTransformer as TransformerOutputTransformer,
+	type TransformerPipeline,
+	TransformerPipelineSchema,
+} from "./rendering/transformers";
 export {
 	type AlignItems,
 	AlignItemsSchema,
