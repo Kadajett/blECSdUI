@@ -260,6 +260,15 @@ export {
 	renderBorder,
 	resolveBorderCharset,
 } from "./rendering/border";
+export type { DiffConfig, DiffOutput, DiffResult } from "./rendering/diff";
+export {
+	computeUpdate,
+	DiffConfigSchema,
+	DiffOutputSchema,
+	DiffResultSchema,
+	diffOutput,
+	generateIncrementalUpdate,
+} from "./rendering/diff";
 export type {
 	ClipRegion,
 	OutputBuffer,
@@ -276,6 +285,26 @@ export {
 	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
+export type {
+	NodeLayoutMap,
+	NodeRegistry,
+	NodeStyleInfo,
+	NodeStyleMap,
+	RenderLayout,
+	RenderOptions,
+} from "./rendering/render-tree";
+export {
+	RenderNodeSchema,
+	RenderOptionsSchema,
+	renderNodeToOutput,
+	renderTree,
+	squashTextNodes as renderSquashTextNodes,
+} from "./rendering/render-tree";
+export type { LogUpdate, LogUpdateOptions } from "./rendering/terminal-output";
+export {
+	createLogUpdate,
+	LogUpdateOptionsSchema,
+} from "./rendering/terminal-output";
 export {
 	applyTransformer,
 	applyTransformers,
@@ -285,6 +314,16 @@ export {
 	type TransformerPipeline,
 	TransformerPipelineSchema,
 } from "./rendering/transformers";
+export type {
+	ResizableStream,
+	ResizeCallbacks,
+	ResizeHandler,
+	ResizeHandlerOptions,
+} from "./resize-handler";
+export {
+	createResizeHandler,
+	ResizeHandlerOptionsSchema,
+} from "./resize-handler";
 export {
 	type AlignItems,
 	AlignItemsSchema,

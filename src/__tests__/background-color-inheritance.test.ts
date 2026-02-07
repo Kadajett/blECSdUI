@@ -101,12 +101,7 @@ describe("background color inheritance", () => {
 			{ key: "right", backgroundColor: "blue" },
 			text2,
 		);
-		const parent = createElement(
-			Box,
-			{ flexDirection: "row" },
-			left,
-			right,
-		);
+		const parent = createElement(Box, { flexDirection: "row" }, left, right);
 		renderElement(parent, container);
 		await flush();
 		expect(container.world).toBeDefined();
