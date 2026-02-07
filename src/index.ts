@@ -227,31 +227,6 @@ export {
 	renderElement,
 } from "./reconciler";
 export { render } from "./render";
-export {
-	type AlignItems,
-	AlignItemsSchema,
-	type AlignSelf,
-	AlignSelfSchema,
-	type BorderStyle,
-	BorderStyleSchema,
-	type Display,
-	DisplaySchema,
-	type FlexDirection,
-	FlexDirectionSchema,
-	type FlexWrap,
-	FlexWrapSchema,
-	type JustifyContent,
-	JustifyContentSchema,
-	type Overflow,
-	OverflowSchema,
-	type Position,
-	PositionSchema,
-	parseStyles,
-	type Styles,
-	StylesSchema,
-	type TextWrap,
-	TextWrapSchema,
-} from "./styles";
 export type { RenderBackgroundOptions } from "./rendering/background";
 export {
 	RenderBackgroundOptionsSchema,
@@ -282,13 +257,53 @@ export type {
 } from "./rendering/output-buffer";
 export {
 	ClipRegionSchema,
-	WriteOptionsSchema,
 	createOutputBuffer,
 	getBufferContent,
 	getBufferHeight,
 	popClip,
 	pushClip,
+	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
+export type {
+	NodeLayoutMap,
+	NodeRegistry,
+	NodeStyleInfo,
+	NodeStyleMap,
+	RenderLayout,
+	RenderOptions,
+} from "./rendering/render-tree";
+export {
+	RenderNodeSchema,
+	RenderOptionsSchema,
+	renderNodeToOutput,
+	renderTree,
+	squashTextNodes,
+} from "./rendering/render-tree";
+export {
+	type AlignItems,
+	AlignItemsSchema,
+	type AlignSelf,
+	AlignSelfSchema,
+	type BorderStyle,
+	BorderStyleSchema,
+	type Display,
+	DisplaySchema,
+	type FlexDirection,
+	FlexDirectionSchema,
+	type FlexWrap,
+	FlexWrapSchema,
+	type JustifyContent,
+	JustifyContentSchema,
+	type Overflow,
+	OverflowSchema,
+	type Position,
+	PositionSchema,
+	parseStyles,
+	type Styles,
+	StylesSchema,
+	type TextWrap,
+	TextWrapSchema,
+} from "./styles";
 export type { RenderThrottle, ThrottleConfig } from "./throttle";
 export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
