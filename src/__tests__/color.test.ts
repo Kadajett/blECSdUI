@@ -73,7 +73,9 @@ describe("ColorSpecSchema", () => {
 
 	it("accepts rgb() strings", () => {
 		expect(ColorSpecSchema.parse("rgb(255,0,0)")).toBe("rgb(255,0,0)");
-		expect(ColorSpecSchema.parse("rgb( 0 , 255 , 0 )")).toBe("rgb( 0 , 255 , 0 )");
+		expect(ColorSpecSchema.parse("rgb( 0 , 255 , 0 )")).toBe(
+			"rgb( 0 , 255 , 0 )",
+		);
 	});
 
 	it("accepts ansi256() strings", () => {
@@ -256,7 +258,10 @@ describe("colorize", () => {
 	});
 
 	it("wraps text with both fg and bg colors", () => {
-		const result = colorize("hello", { color: "white", backgroundColor: "red" });
+		const result = colorize("hello", {
+			color: "white",
+			backgroundColor: "red",
+		});
 		expect(result).toContain("hello");
 		expect(result).toContain("\x1b[0m");
 		const stripped = stripAnsi(result);

@@ -1,13 +1,14 @@
 {
 	"name": "blecsdui",
 	"version": "0.1.0",
-	"description": "React terminal UI framework powered by blecsd ECS",
+	"description": "Terminal app framework built on blECSd",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsx watch src/index.ts",
+		"start": "node dist/index.js",
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
 		"format": "biome format --write .",
@@ -15,22 +16,30 @@
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kadajett/blECSdUI.git"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kadajett/blECSdUI/issues"
+	},
+	"homepage": "https://github.com/Kadajett/blECSdUI#readme",
 	"dependencies": {
-		"@types/node": "^25.2.1",
-		"@types/react": "^19.2.13",
 		"blecsd": "^0.2.0",
 		"react": "^19.2.4",
 		"react-reconciler": "^0.33.0",
-		"tsx": "^4.21.0",
-		"typescript": "^5.9.3",
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.14",
+		"@types/node": "^25.2.1",
+		"@types/react": "^19.2.13",
 		"@vitest/coverage-v8": "^4.0.18",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3",
 		"vitest": "^4.0.18"
 	}
 }

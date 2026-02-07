@@ -28,3 +28,5 @@ export {
 	validatedUnpackColor,
 	visibleLength,
 } from "./color.js";
+export type { AppConfig } from "./config.js";
+export { AppConfigSchema, createDefaultConfig } from "./config.js";

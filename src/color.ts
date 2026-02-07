@@ -73,7 +73,10 @@ export const NAMED_COLOR_RGB = Object.freeze({
 // Zod schemas
 // ---------------------------------------------------------------------------
 
-const namedColorNames = Object.keys(NAMED_COLORS) as [NamedColor, ...NamedColor[]];
+const namedColorNames = Object.keys(NAMED_COLORS) as [
+	NamedColor,
+	...NamedColor[],
+];
 
 const NamedColorSchema = z.enum(namedColorNames);
 
@@ -135,7 +138,9 @@ function resolveToBlecsdColor(spec: ColorSpec): Color {
 
 	// rgb(r, g, b) string
 	if (typeof spec === "string" && spec.startsWith("rgb(")) {
-		const match = spec.match(/^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/);
+		const match = spec.match(
+			/^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/,
+		);
 		if (match) {
 			return {
 				r: Number.parseInt(match[1], 10),
@@ -245,7 +250,12 @@ export function validatedUnpackColor(color: number): {
 
 const RgbComponentSchema = z.number().int().min(0).max(255);
 
-export function validatedPackColor(r: number, g: number, b: number, a = 255): number {
+export function validatedPackColor(
+	r: number,
+	g: number,
+	b: number,
+	a = 255,
+): number {
 	RgbComponentSchema.parse(r);
 	RgbComponentSchema.parse(g);
 	RgbComponentSchema.parse(b);
@@ -253,7 +263,10 @@ export function validatedPackColor(r: number, g: number, b: number, a = 255): nu
 	return packColor(r, g, b, a);
 }
 
-export function validatedColorToHex(color: number, includeAlpha = false): string {
+export function validatedColorToHex(
+	color: number,
+	includeAlpha = false,
+): string {
 	PackedColorSchema.parse(color);
 	return colorToHex(color, includeAlpha);
 }
