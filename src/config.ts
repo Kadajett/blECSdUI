@@ -10,6 +10,7 @@ export const AppConfigSchema = z.object({
 	stdout: streamSchema.optional(),
 	stderr: streamSchema.optional(),
 	debug: z.boolean().default(false),
+	ci: z.boolean().optional(),
 	exitOnCtrlC: z.boolean().default(true),
 	patchConsole: z.boolean().default(true),
 	maxFps: z.number().int().min(1).max(120).default(30),
