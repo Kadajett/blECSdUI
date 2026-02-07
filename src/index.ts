@@ -370,15 +370,6 @@ export {
 	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
-export {
-	applyTransformer,
-	applyTransformers,
-	composeTransformers,
-	IDENTITY_TRANSFORMER,
-	type OutputTransformer as TransformerOutputTransformer,
-	type TransformerPipeline,
-	TransformerPipelineSchema,
-} from "./rendering/transformers";
 export type {
 	ResizableStream,
 	ResizeCallbacks,
@@ -414,28 +405,6 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
-export {
-	clearMeasureCache,
-	configureMeasureCache,
-	getMeasureCacheSize,
-	type MeasureCacheConfig,
-	MeasureCacheConfigSchema,
-	type MeasureResult,
-	MeasureResultSchema,
-	measureText,
-} from "./text/measure-text";
-export {
-	applyStyle,
-	getTextSegments,
-	mergeStyles,
-	squashTextNodes,
-	type TextNodeData,
-	type TextSegment,
-	TextSegmentSchema,
-	type TextStyle,
-	TextStyleSchema,
-} from "./text/squash-text-nodes";
-export {
 	type WrapMode,
 	WrapModeSchema,
 	type WrapOptions,
