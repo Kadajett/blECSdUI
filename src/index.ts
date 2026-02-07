@@ -52,6 +52,16 @@ export {
 } from "./components/Newline";
 export { Spacer } from "./components/Spacer";
 export {
+	commitStaticOutput,
+	createStaticOutputState,
+	getStaticOutput,
+	hasNewStaticOutput,
+	Static,
+	type StaticOutputState,
+	type StaticProps,
+	StaticPropsSchema,
+} from "./components/Static";
+export {
 	InheritedTextStyleContext,
 	mergeTextStyles,
 	Text,
@@ -71,6 +81,8 @@ export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type { StdinContextValue } from "./contexts/stdin";
 export { StdinContext } from "./contexts/stdin";
+export type { AppContextValue } from "./contexts/app";
+export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type {
 	ElementNode,
 	NodeType,
@@ -95,6 +107,35 @@ export {
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export { useStdin } from "./hooks/use-stdin";
+export { useApp } from "./hooks/use-app";
+export type {
+	FocusAction,
+	FocusEntry,
+	FocusManager,
+	FocusOptions,
+	FocusState,
+} from "./focus/focus-context";
+export {
+	FocusContext,
+	FocusOptionsSchema,
+	focusReducer,
+	generateFocusId,
+	INITIAL_FOCUS_STATE,
+	resetFocusIdCounter,
+} from "./focus/focus-context";
+export type {
+	KeyboardNavigationOptions,
+	KeyboardNavigationResult,
+} from "./focus/keyboard-navigation";
+export {
+	createFocusNavigationHandler,
+	handleFocusKeypress,
+	KeyboardNavigationOptionsSchema,
+} from "./focus/keyboard-navigation";
+export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
+export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
+export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
+export { useFocusManager } from "./hooks/use-focus-manager";
 export type {
 	BoxProps,
 	Container,
