@@ -52,6 +52,16 @@ export {
 } from "./components/Newline";
 export { Spacer } from "./components/Spacer";
 export {
+	commitStaticOutput,
+	createStaticOutputState,
+	getStaticOutput,
+	hasNewStaticOutput,
+	Static,
+	type StaticOutputState,
+	type StaticProps,
+	StaticPropsSchema,
+} from "./components/Static";
+export {
 	InheritedTextStyleContext,
 	mergeTextStyles,
 	Text,
@@ -92,6 +102,34 @@ export {
 } from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
+export type {
+	FocusAction,
+	FocusEntry,
+	FocusManager,
+	FocusOptions,
+	FocusState,
+} from "./focus/focus-context";
+export {
+	FocusContext,
+	FocusOptionsSchema,
+	focusReducer,
+	generateFocusId,
+	INITIAL_FOCUS_STATE,
+	resetFocusIdCounter,
+} from "./focus/focus-context";
+export type {
+	KeyboardNavigationOptions,
+	KeyboardNavigationResult,
+} from "./focus/keyboard-navigation";
+export {
+	createFocusNavigationHandler,
+	handleFocusKeypress,
+	KeyboardNavigationOptionsSchema,
+} from "./focus/keyboard-navigation";
+export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
+export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
+export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
+export { useFocusManager } from "./hooks/use-focus-manager";
 export type {
 	BoxProps,
 	Container,
