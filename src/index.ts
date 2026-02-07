@@ -77,8 +77,28 @@ export {
 	type TransformProps,
 	TransformPropsSchema,
 } from "./components/Transform";
+export type {
+	VirtualizedListHandle,
+	VirtualizedListProps,
+} from "./components/VirtualizedList";
+export {
+	VirtualizedList,
+	VirtualizedListPropsSchema,
+} from "./components/VirtualizedList";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type {
+	ConsoleCallback,
+	ConsoleMethodName,
+	ConsolePatchConfig,
+	ConsolePatchState,
+} from "./console-patch";
+export {
+	ConsolePatchConfigSchema,
+	isConsolePatched,
+	patchConsole,
+	restoreConsole,
+} from "./console-patch";
 export type { AppContextValue } from "./contexts/app";
 export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type { StderrContextValue } from "./contexts/stderr";
@@ -150,6 +170,18 @@ export { UseInputOptionsSchema, useInput } from "./hooks/use-input";
 export { useStderr } from "./hooks/use-stderr";
 export { useStdin } from "./hooks/use-stdin";
 export { useStdout } from "./hooks/use-stdout";
+export type {
+	UseVirtualizedListOptions,
+	VirtualizedListResult,
+	WindowState,
+} from "./hooks/use-virtualized-list";
+export {
+	calculateWindow,
+	getScrollFraction,
+	renderScrollIndicator,
+	UseVirtualizedListOptionsSchema,
+	useVirtualizedList,
+} from "./hooks/use-virtualized-list";
 export type {
 	BoxProps,
 	Container,
