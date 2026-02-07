@@ -280,6 +280,11 @@ export {
 	renderTree,
 	squashTextNodes,
 } from "./rendering/render-tree";
+export type { LogUpdate, LogUpdateOptions } from "./rendering/terminal-output";
+export {
+	createLogUpdate,
+	LogUpdateOptionsSchema,
+} from "./rendering/terminal-output";
 export {
 	type AlignItems,
 	AlignItemsSchema,
