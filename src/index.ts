@@ -39,6 +39,8 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
+export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export type {
 	ElementNode,
 	NodeType,
@@ -95,6 +97,12 @@ export {
 } from "./input/parse-keypress";
 export type { RawModeManager } from "./input/raw-mode";
 export { createRawModeManager } from "./input/raw-mode";
+export {
+	deleteInstance,
+	getInstance,
+	hasInstance,
+	setInstance,
+} from "./instances";
 export {
 	deleteInstance,
 	getInstance,
