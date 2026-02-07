@@ -2,6 +2,10 @@ import type { ReactElement } from "react";
 import type { z } from "zod";
 import type { AppConfig } from "./config";
 import { AppConfigSchema } from "./config";
+import { createExitHandler } from "./exit-handler";
+import type { Container } from "./host-config";
+import { createRootContainer, reconciler, renderElement } from "./reconciler";
+import { createRenderThrottle } from "./throttle";
 
 const CreateAppOptionsSchema = AppConfigSchema.partial();
 
@@ -10,10 +14,11 @@ export type CreateAppOptions = z.infer<typeof CreateAppOptionsSchema>;
 export type AppInstance = Readonly<{
 	render: (element: ReactElement) => void;
 	rerender: (element: ReactElement) => void;
-	unmount: () => void;
+	unmount: (error?: Error) => void;
 	waitUntilExit: () => Promise<void>;
 	cleanup: () => void;
 	clear: () => void;
+	container: Container;
 }>;
 
 const resolveConfig = (options: CreateAppOptions): AppConfig => {
@@ -28,46 +33,102 @@ const resolveConfig = (options: CreateAppOptions): AppConfig => {
 	});
 };
 
+// ANSI escape to show cursor
+const SHOW_CURSOR = "\x1b[?25h";
+
 export const createApp = (
 	element: ReactElement,
 	options?: CreateAppOptions,
 ): AppInstance => {
 	const config = resolveConfig(CreateAppOptionsSchema.parse(options ?? {}));
 
-	let currentElement: ReactElement = element;
+	const container = createRootContainer();
+	let fiberRoot: unknown;
 	let isMounted = true;
 
+	// Deferred exit promise with resolve/reject
 	let exitResolve: (() => void) | undefined;
-	const exitPromise = new Promise<void>((resolve) => {
+	let exitReject: ((error: Error) => void) | undefined;
+	const exitPromise = new Promise<void>((resolve, reject) => {
 		exitResolve = resolve;
+		exitReject = reject;
 	});
 
+	// Throttled render: container callbacks run layout + render systems
+	const throttle = createRenderThrottle(
+		{ maxFps: config.maxFps, debug: config.debug },
+		() => {
+			container.onComputeLayout?.();
+			container.onRender?.();
+		},
+	);
+
 	const render = (el: ReactElement): void => {
-		currentElement = el;
-		// TODO(#3): Replace with actual reconciler render call.
-		// For now, store the element for the reconciler to pick up.
-		void currentElement;
-		void config;
+		if (!isMounted) return;
+
+		if (fiberRoot) {
+			reconciler.updateContainer(el, fiberRoot, null, null);
+		} else {
+			fiberRoot = renderElement(el, container);
+		}
+
+		throttle.scheduleRender();
 	};
 
 	const rerender = (el: ReactElement): void => {
 		render(el);
 	};
 
-	const unmount = (): void => {
+	const restoreTerminalState = (): void => {
+		const stdout = config.stdout as NodeJS.WritableStream | undefined;
+		if (stdout && "write" in stdout) {
+			(stdout as NodeJS.WritableStream).write(SHOW_CURSOR);
+		}
+	};
+
+	const unmount = (error?: Error): void => {
 		if (!isMounted) {
 			return;
 		}
 		isMounted = false;
-		exitResolve?.();
+
+		// Destroy throttle to prevent future renders
+		throttle.destroy();
+
+		// Tear down React tree
+		if (fiberRoot) {
+			reconciler.updateContainer(null, fiberRoot, null, null);
+		}
+
+		// Remove exit handlers
+		exitHandler.cleanup();
+
+		// Restore terminal state
+		restoreTerminalState();
+
+		// Resolve or reject the exit promise
+		if (error) {
+			exitReject?.(error);
+		} else {
+			exitResolve?.();
+		}
 	};
+
+	// Exit handler for SIGINT and uncaught exceptions
+	const exitHandler = createExitHandler(
+		{ exitOnCtrlC: config.exitOnCtrlC },
+		(error?: Error) => {
+			unmount(error);
+		},
+	);
 
 	const waitUntilExit = (): Promise<void> => {
 		return exitPromise;
 	};
 
 	const cleanup = (): void => {
-		// TODO(#3): Remove input listeners and teardown terminal state.
+		throttle.destroy();
+		exitHandler.cleanup();
 	};
 
 	const clear = (): void => {
@@ -87,5 +148,6 @@ export const createApp = (
 		waitUntilExit,
 		cleanup,
 		clear,
+		container,
 	});
 };

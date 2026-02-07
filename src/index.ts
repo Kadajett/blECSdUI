@@ -39,6 +39,38 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
+export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
+export type {
+	BoxProps,
+	Container,
+	EcsInstance,
+	ElementType,
+	HostContext,
+	TextInstance,
+	TextProps,
+} from "./host-config";
+export {
+	appendChild,
+	commitTextUpdate,
+	commitUpdate,
+	createInstance,
+	createTextInstance,
+	diffProps,
+	ElementTypeSchema,
+	getChildHostContext,
+	getPublicInstance,
+	getRootHostContext,
+	insertBefore,
+	removeChild,
+	resetAfterCommit,
+} from "./host-config";
+export {
+	deleteInstance,
+	getInstance,
+	hasInstance,
+	setInstance,
+} from "./instances";
 export {
 	applyConstraints,
 	applyHeightConstraints,
@@ -95,6 +127,12 @@ export {
 	ZERO_MARGIN,
 	ZERO_PADDING,
 } from "./layout/spacing";
+export {
+	createContainer,
+	createRootContainer,
+	reconciler,
+	renderElement,
+} from "./reconciler";
 export { render } from "./render";
 export {
 	type AlignItems,
@@ -121,3 +159,5 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export type { RenderThrottle, ThrottleConfig } from "./throttle";
+export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
