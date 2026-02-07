@@ -37,6 +37,14 @@ export {
 	validatedUnpackColor,
 	visibleLength,
 } from "./color";
+export {
+	type AriaProps,
+	AriaPropsSchema,
+	BackgroundColorContext,
+	Box,
+	type BoxComponentProps,
+	BoxComponentPropsSchema,
+} from "./components/Box";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
