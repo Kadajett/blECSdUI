@@ -135,6 +135,12 @@ export {
 	KeyboardNavigationOptionsSchema,
 } from "./focus/keyboard-navigation";
 export { useApp } from "./hooks/use-app";
+export type { MeasureResult as ElementMeasureResult } from "./hooks/use-measure-element";
+export {
+	MeasureResultSchema as ElementMeasureResultSchema,
+	measureElement,
+	useMeasureElement,
+} from "./hooks/use-measure-element";
 export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
 export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
 export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
