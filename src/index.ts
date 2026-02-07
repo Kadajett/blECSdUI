@@ -40,6 +40,26 @@ export {
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export {
+	applyConstraints,
+	applyHeightConstraints,
+	type BoxEdges,
+	BoxEdgesSchema,
+	computeBorderBoxSize,
+	computeContentSize,
+	constrainFlexSize,
+	type DimensionConstraints,
+	DimensionConstraintsSchema,
+	type DimensionValue,
+	DimensionValueSchema,
+	type ResolvedDimensions,
+	ResolvedDimensionsSchema,
+	resolveDimension,
+	resolveElementDimensions,
+	resolveFlexBasis,
+	resolvePercentage,
+	ZERO_EDGES,
+} from "./layout/dimensions";
+export {
 	type ChildLayout,
 	ChildLayoutSchema,
 	calculateFlexLayout,
