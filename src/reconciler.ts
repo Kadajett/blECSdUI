@@ -1,17 +1,17 @@
 import {
 	Dimensions,
 	Hierarchy,
+	markDirty,
 	Position,
 	Renderable,
-	markDirty,
 	setDimensions,
 	setPosition,
 	setVisible,
 } from "blecsd/components";
 import type { Entity, World } from "blecsd/core";
 import { addComponent, addEntity, createWorld } from "blecsd/core";
-import { createContext } from "react";
 import type { ReactElement } from "react";
+import { createContext } from "react";
 import createReconciler from "react-reconciler";
 import {
 	DefaultEventPriority,
@@ -20,18 +20,16 @@ import {
 import * as Scheduler from "scheduler";
 
 import {
-	type Container,
-	type EcsInstance,
-	type HostContext,
-	type TextInstance,
 	appendChild,
+	type Container,
 	createInstance,
 	createTextInstance,
-	diffProps,
+	type EcsInstance,
 	finalizeInitialChildren,
 	getChildHostContext,
 	getPublicInstance,
 	getRootHostContext,
+	type HostContext,
 	commitTextUpdate as hostCommitTextUpdate,
 	commitUpdate as hostCommitUpdate,
 	resetAfterCommit as hostResetAfterCommit,
@@ -39,6 +37,7 @@ import {
 	prepareUpdate,
 	removeChild,
 	shouldSetTextContent,
+	type TextInstance,
 } from "./host-config";
 
 // ---------------------------------------------------------------------------

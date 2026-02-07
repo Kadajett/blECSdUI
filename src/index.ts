@@ -1,39 +1,92 @@
-export { AppConfigSchema, createDefaultConfig } from "./config";
-export type { AppConfig } from "./config";
-
-export { createApp } from "./app";
 export type { AppInstance, CreateAppOptions } from "./app";
-
-export { render } from "./render";
-
+export { createApp } from "./app";
 export {
-	createInstance,
-	createTextInstance,
-	appendChild,
-	removeChild,
-	insertBefore,
-	commitUpdate,
-	commitTextUpdate,
-	resetAfterCommit,
-	getRootHostContext,
-	getChildHostContext,
-	getPublicInstance,
-	diffProps,
-	ElementTypeSchema,
-} from "./host-config";
+	type BasicColor,
+	blecsdParseColor,
+	type Color,
+	type Color256,
+	type ColorizeOptions,
+	ColorizeOptionsSchema,
+	type ColorLevel,
+	type ColorSpec,
+	ColorSpecSchema,
+	type ColorSupport,
+	colorize,
+	colorToAnsi,
+	colorToHex,
+	detectColorLevel,
+	getColorDepth,
+	hexToColor,
+	NAMED_COLOR_RGB,
+	packColor,
+	parseColor,
+	type RGBColor,
+	stripAnsi,
+	unpackColor,
+	validatedColorToHex,
+	validatedHexToColor,
+	validatedPackColor,
+	validatedParseColor,
+	validatedUnpackColor,
+	visibleLength,
+} from "./color";
+export type { AppConfig } from "./config";
+export { AppConfigSchema, createDefaultConfig } from "./config";
 export type {
-	EcsInstance,
-	TextInstance,
-	Container,
-	HostContext,
-	ElementType,
 	BoxProps,
+	Container,
+	EcsInstance,
+	ElementType,
+	HostContext,
+	TextInstance,
 	TextProps,
 } from "./host-config";
 
 export {
+	appendChild,
+	commitTextUpdate,
+	commitUpdate,
+	createInstance,
+	createTextInstance,
+	diffProps,
+	ElementTypeSchema,
+	getChildHostContext,
+	getPublicInstance,
+	getRootHostContext,
+	insertBefore,
+	removeChild,
+	resetAfterCommit,
+} from "./host-config";
+export {
 	createContainer,
 	createRootContainer,
-	renderElement,
 	reconciler,
+	renderElement,
 } from "./reconciler";
+export { render } from "./render";
+
+export {
+	type AlignItems,
+	AlignItemsSchema,
+	type AlignSelf,
+	AlignSelfSchema,
+	type BorderStyle,
+	BorderStyleSchema,
+	type Display,
+	DisplaySchema,
+	type FlexDirection,
+	FlexDirectionSchema,
+	type FlexWrap,
+	FlexWrapSchema,
+	type JustifyContent,
+	JustifyContentSchema,
+	type Overflow,
+	OverflowSchema,
+	type Position,
+	PositionSchema,
+	parseStyles,
+	type Styles,
+	StylesSchema,
+	type TextWrap,
+	TextWrapSchema,
+} from "./styles";

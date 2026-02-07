@@ -1,21 +1,20 @@
+import type { StyleOptions } from "blecsd/components";
 import {
 	Content,
 	Dimensions,
-	Hierarchy,
-	Position,
-	Renderable,
 	appendChild as ecsAppendChild,
 	insertBefore as ecsInsertBefore,
 	removeChild as ecsRemoveChild,
-	getChildren,
+	Hierarchy,
 	markDirty,
+	Position,
+	Renderable,
 	setContent,
 	setDimensions,
 	setPosition,
 	setStyle,
 	setVisible,
 } from "blecsd/components";
-import type { StyleOptions } from "blecsd/components";
 import type { Entity, World } from "blecsd/core";
 import {
 	addComponent,
@@ -48,7 +47,7 @@ export const BoxPropsSchema = z
 		height: z.number().optional(),
 		x: z.number().optional(),
 		y: z.number().optional(),
-		style: z.record(z.unknown()).optional(),
+		style: z.record(z.string(), z.unknown()).optional(),
 		children: z.unknown().optional(),
 	})
 	.passthrough();
@@ -57,7 +56,7 @@ export const TextPropsSchema = z
 	.object({
 		children: z.unknown().optional(),
 		wrap: z.boolean().optional(),
-		style: z.record(z.unknown()).optional(),
+		style: z.record(z.string(), z.unknown()).optional(),
 	})
 	.passthrough();
 

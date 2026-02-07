@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import type { z } from "zod";
-import { AppConfigSchema } from "./config";
 import type { AppConfig } from "./config";
+import { AppConfigSchema } from "./config";
 import type { Container } from "./host-config";
 import { createRootContainer, reconciler, renderElement } from "./reconciler";
 

@@ -1,13 +1,12 @@
 import {
-	Content,
 	Dimensions,
-	Hierarchy,
-	Position,
-	Renderable,
 	getChildren,
 	getContent,
 	getDimensions,
 	getPosition,
+	Hierarchy,
+	Position,
+	Renderable,
 	setDimensions,
 	setPosition,
 } from "blecsd/components";
@@ -17,15 +16,11 @@ import {
 	createWorld,
 	entityExists,
 } from "blecsd/core";
-import type { Entity, World } from "blecsd/core";
 import { describe, expect, it, vi } from "vitest";
 
 import {
-	type Container,
-	type EcsInstance,
-	type HostContext,
-	type TextInstance,
 	appendChild,
+	type Container,
 	commitTextUpdate,
 	commitUpdate,
 	createInstance,
@@ -35,6 +30,7 @@ import {
 	getChildHostContext,
 	getPublicInstance,
 	getRootHostContext,
+	type HostContext,
 	insertBefore,
 	prepareUpdate,
 	removeChild,
