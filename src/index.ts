@@ -111,6 +111,20 @@ export {
 	resolveFlexSizes,
 } from "./layout/flex";
 export {
+	availableSpaceAfterGap,
+	type GapConfig,
+	GapConfigSchema,
+	gapOffsetForItem,
+	getCrossAxisGap,
+	getMainAxisGap,
+	type ResolvedGap,
+	ResolvedGapSchema,
+	resolveGap,
+	totalCrossGapSpace,
+	totalMainGapSpace,
+	ZERO_GAP,
+} from "./layout/gap";
+export {
 	type BorderEdges,
 	BorderEdgesSchema,
 	type ClipRegion,
