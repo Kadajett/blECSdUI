@@ -265,6 +265,21 @@ export {
 	WriteOptionsSchema,
 	writeToBuffer,
 } from "./rendering/output-buffer";
+export type {
+	NodeLayoutMap,
+	NodeRegistry,
+	NodeStyleInfo,
+	NodeStyleMap,
+	RenderLayout,
+	RenderOptions,
+} from "./rendering/render-tree";
+export {
+	RenderNodeSchema,
+	RenderOptionsSchema,
+	renderNodeToOutput,
+	renderTree,
+	squashTextNodes,
+} from "./rendering/render-tree";
 export type { LogUpdate, LogUpdateOptions } from "./rendering/terminal-output";
 export {
 	createLogUpdate,
