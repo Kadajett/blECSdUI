@@ -361,6 +361,50 @@ export {
 	TextStyleSchema,
 } from "./text/squash-text-nodes";
 export {
+	ClipRegionSchema,
+	createOutputBuffer,
+	getBufferContent,
+	getBufferHeight,
+	popClip,
+	pushClip,
+	WriteOptionsSchema,
+	writeToBuffer,
+} from "./rendering/output-buffer";
+export type {
+	ResizableStream,
+	ResizeCallbacks,
+	ResizeHandler,
+	ResizeHandlerOptions,
+} from "./resize-handler";
+export {
+	createResizeHandler,
+	ResizeHandlerOptionsSchema,
+} from "./resize-handler";
+export {
+	type AlignItems,
+	AlignItemsSchema,
+	type AlignSelf,
+	AlignSelfSchema,
+	type BorderStyle,
+	BorderStyleSchema,
+	type Display,
+	DisplaySchema,
+	type FlexDirection,
+	FlexDirectionSchema,
+	type FlexWrap,
+	FlexWrapSchema,
+	type JustifyContent,
+	JustifyContentSchema,
+	type Overflow,
+	OverflowSchema,
+	type Position,
+	PositionSchema,
+	parseStyles,
+	type Styles,
+	StylesSchema,
+	type TextWrap,
+	TextWrapSchema,
+} from "./styles";
 	type WrapMode,
 	WrapModeSchema,
 	type WrapOptions,
