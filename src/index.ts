@@ -45,6 +45,17 @@ export {
 	type BoxComponentProps,
 	BoxComponentPropsSchema,
 } from "./components/Box";
+export {
+	InheritedTextStyleContext,
+	mergeTextStyles,
+	Text,
+	type TextComponentProps,
+	TextComponentPropsSchema,
+	type TextStyleContext,
+	TextStyleContextSchema,
+	type TextWrapMode,
+	TextWrapModeSchema,
+} from "./components/Text";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
