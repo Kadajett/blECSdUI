@@ -46,6 +46,12 @@ export {
 	BoxComponentPropsSchema,
 } from "./components/Box";
 export {
+	Newline,
+	type NewlineProps,
+	NewlinePropsSchema,
+} from "./components/Newline";
+export { Spacer } from "./components/Spacer";
+export {
 	InheritedTextStyleContext,
 	mergeTextStyles,
 	Text,
@@ -56,6 +62,11 @@ export {
 	type TextWrapMode,
 	TextWrapModeSchema,
 } from "./components/Text";
+export {
+	Transform,
+	type TransformProps,
+	TransformPropsSchema,
+} from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type {
@@ -249,12 +260,106 @@ export {
 	renderBorder,
 	resolveBorderCharset,
 } from "./rendering/border";
+export type { DiffConfig, DiffOutput, DiffResult } from "./rendering/diff";
+export {
+	computeUpdate,
+	DiffConfigSchema,
+	DiffOutputSchema,
+	DiffResultSchema,
+	diffOutput,
+	generateIncrementalUpdate,
+} from "./rendering/diff";
 export type {
 	ClipRegion,
 	OutputBuffer,
 	OutputTransformer,
 	WriteOptions,
 } from "./rendering/output-buffer";
+export {
+	ClipRegionSchema,
+	createOutputBuffer,
+	getBufferContent,
+	getBufferHeight,
+	popClip,
+	pushClip,
+	WriteOptionsSchema,
+	writeToBuffer,
+} from "./rendering/output-buffer";
+export {
+	applyTransformer,
+	applyTransformers,
+	composeTransformers,
+	IDENTITY_TRANSFORMER,
+	type OutputTransformer as TransformerOutputTransformer,
+	type TransformerPipeline,
+	TransformerPipelineSchema,
+} from "./rendering/transformers";
+export type {
+	NodeLayoutMap,
+	NodeRegistry,
+	NodeStyleInfo,
+	NodeStyleMap,
+	RenderLayout,
+	RenderOptions,
+} from "./rendering/render-tree";
+export {
+	RenderNodeSchema,
+	RenderOptionsSchema,
+	renderNodeToOutput,
+	renderTree,
+	squashTextNodes,
+} from "./rendering/render-tree";
+export type { LogUpdate, LogUpdateOptions } from "./rendering/terminal-output";
+export {
+	createLogUpdate,
+	LogUpdateOptionsSchema,
+} from "./rendering/terminal-output";
+export {
+	type AlignItems,
+	AlignItemsSchema,
+	type AlignSelf,
+	AlignSelfSchema,
+	type BorderStyle,
+	BorderStyleSchema,
+	type Display,
+	DisplaySchema,
+	type FlexDirection,
+	FlexDirectionSchema,
+	type FlexWrap,
+	FlexWrapSchema,
+	type JustifyContent,
+	JustifyContentSchema,
+	type Overflow,
+	OverflowSchema,
+	type Position,
+	PositionSchema,
+	parseStyles,
+	type Styles,
+	StylesSchema,
+	type TextWrap,
+	TextWrapSchema,
+} from "./styles";
+export {
+	clearMeasureCache,
+	configureMeasureCache,
+	getMeasureCacheSize,
+	type MeasureCacheConfig,
+	MeasureCacheConfigSchema,
+	type MeasureResult,
+	MeasureResultSchema,
+	measureText,
+} from "./text/measure-text";
+export {
+	applyStyle,
+	getTextSegments,
+	mergeStyles,
+	squashTextNodes,
+	type TextNodeData,
+	type TextSegment,
+	TextSegmentSchema,
+	type TextStyle,
+	TextStyleSchema,
+} from "./text/squash-text-nodes";
 export {
 	ClipRegionSchema,
 	createOutputBuffer,
@@ -300,5 +405,11 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+	type WrapMode,
+	WrapModeSchema,
+	type WrapOptions,
+	WrapOptionsSchema,
+	wrapText,
+} from "./text/wrap-text";
 export type { RenderThrottle, ThrottleConfig } from "./throttle";
 export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
