@@ -79,6 +79,8 @@ export {
 } from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { AppContextValue } from "./contexts/app";
+export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type {
 	ElementNode,
 	NodeType,
@@ -102,6 +104,7 @@ export {
 } from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
+export { useApp } from "./hooks/use-app";
 export type {
 	FocusAction,
 	FocusEntry,
