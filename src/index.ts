@@ -58,6 +58,23 @@ export {
 	positionOnMainAxis,
 	resolveFlexSizes,
 } from "./layout/flex";
+export {
+	adjustLayoutForSpacing,
+	type ContentArea,
+	ContentAreaSchema,
+	computeMarginBetween,
+	getContentArea,
+	getCrossAxisMargins,
+	getMainAxisMargins,
+	getPaddingOffset,
+	inflateBaseSize,
+	type Margin,
+	MarginSchema,
+	type Padding,
+	PaddingSchema,
+	ZERO_MARGIN,
+	ZERO_PADDING,
+} from "./layout/spacing";
 export { render } from "./render";
 export {
 	type AlignItems,
