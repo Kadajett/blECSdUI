@@ -2,6 +2,8 @@ import type { ReactElement } from "react";
 import type { z } from "zod";
 import { AppConfigSchema } from "./config";
 import type { AppConfig } from "./config";
+import type { Container } from "./host-config";
+import { createRootContainer, reconciler, renderElement } from "./reconciler";
 
 const CreateAppOptionsSchema = AppConfigSchema.partial();
 
@@ -14,6 +16,7 @@ export type AppInstance = Readonly<{
 	waitUntilExit: () => Promise<void>;
 	cleanup: () => void;
 	clear: () => void;
+	container: Container;
 }>;
 
 const resolveConfig = (options: CreateAppOptions): AppConfig => {
@@ -34,31 +37,35 @@ export const createApp = (
 ): AppInstance => {
 	const config = resolveConfig(CreateAppOptionsSchema.parse(options ?? {}));
 
-	let currentElement: ReactElement = element;
+	const container = createRootContainer();
+	let fiberRoot: unknown;
 	let isMounted = true;
 
-	let exitResolve: (() => void) | undefined;
-	const exitPromise = new Promise<void>((resolve) => {
-		exitResolve = resolve;
-	});
-
 	const render = (el: ReactElement): void => {
-		currentElement = el;
-		// TODO(#3): Replace with actual reconciler render call.
-		// For now, store the element for the reconciler to pick up.
-		void currentElement;
-		void config;
+		if (fiberRoot) {
+			reconciler.updateContainer(el, fiberRoot, null, null);
+		} else {
+			fiberRoot = renderElement(el, container);
+		}
 	};
 
 	const rerender = (el: ReactElement): void => {
 		render(el);
 	};
 
+	let exitResolve: (() => void) | undefined;
+	const exitPromise = new Promise<void>((resolve) => {
+		exitResolve = resolve;
+	});
+
 	const unmount = (): void => {
 		if (!isMounted) {
 			return;
 		}
 		isMounted = false;
+		if (fiberRoot) {
+			reconciler.updateContainer(null, fiberRoot, null, null);
+		}
 		exitResolve?.();
 	};
 
@@ -67,7 +74,8 @@ export const createApp = (
 	};
 
 	const cleanup = (): void => {
-		// TODO(#3): Remove input listeners and teardown terminal state.
+		// Input listeners and terminal state teardown will go here.
+		void config;
 	};
 
 	const clear = (): void => {
@@ -87,5 +95,6 @@ export const createApp = (
 		waitUntilExit,
 		cleanup,
 		clear,
+		container,
 	});
 };
