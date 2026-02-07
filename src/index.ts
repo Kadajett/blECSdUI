@@ -124,18 +124,16 @@ export {
 	type TransformProps,
 	TransformPropsSchema,
 } from "./components/Transform";
+export type {
+	VirtualizedListHandle,
+	VirtualizedListProps,
+} from "./components/VirtualizedList";
+export {
+	VirtualizedList,
+	VirtualizedListPropsSchema,
+} from "./components/VirtualizedList";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
-export type { StdinContextValue } from "./contexts/stdin";
-export { StdinContext } from "./contexts/stdin";
-export type { StderrContextValue } from "./contexts/stderr";
-export { StderrContext } from "./contexts/stderr";
-export type { StdoutContextValue } from "./contexts/stdout";
-export { StdoutContext } from "./contexts/stdout";
-export type { StdinContextValue } from "./contexts/stdin";
-export { StdinContext } from "./contexts/stdin";
-export type { AppContextValue } from "./contexts/app";
-export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type {
 	ConsoleCallback,
 	ConsoleMethodName,
@@ -148,6 +146,14 @@ export {
 	patchConsole,
 	restoreConsole,
 } from "./console-patch";
+export type { AppContextValue } from "./contexts/app";
+export { AppContext, AppContextValueSchema } from "./contexts/app";
+export type { StderrContextValue } from "./contexts/stderr";
+export { StderrContext } from "./contexts/stderr";
+export type { StdinContextValue } from "./contexts/stdin";
+export { StdinContext } from "./contexts/stdin";
+export type { StdoutContextValue } from "./contexts/stdout";
+export { StdoutContext } from "./contexts/stdout";
 export type {
 	ElementNode,
 	NodeType,
@@ -171,8 +177,6 @@ export {
 } from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
-export { useStdin } from "./hooks/use-stdin";
-export { useApp } from "./hooks/use-app";
 export type {
 	FocusAction,
 	FocusEntry,
@@ -197,15 +201,28 @@ export {
 	handleFocusKeypress,
 	KeyboardNavigationOptionsSchema,
 } from "./focus/keyboard-navigation";
+export { useApp } from "./hooks/use-app";
 export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
 export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
 export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
 export { useFocusManager } from "./hooks/use-focus-manager";
 export type { InputHandler, UseInputOptions } from "./hooks/use-input";
 export { UseInputOptionsSchema, useInput } from "./hooks/use-input";
-export { useStdin } from "./hooks/use-stdin";
 export { useStderr } from "./hooks/use-stderr";
+export { useStdin } from "./hooks/use-stdin";
 export { useStdout } from "./hooks/use-stdout";
+export type {
+	UseVirtualizedListOptions,
+	VirtualizedListResult,
+	WindowState,
+} from "./hooks/use-virtualized-list";
+export {
+	calculateWindow,
+	getScrollFraction,
+	renderScrollIndicator,
+	UseVirtualizedListOptionsSchema,
+	useVirtualizedList,
+} from "./hooks/use-virtualized-list";
 export type {
 	BoxProps,
 	Container,
