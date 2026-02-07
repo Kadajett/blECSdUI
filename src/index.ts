@@ -227,6 +227,53 @@ export {
 	renderElement,
 } from "./reconciler";
 export { render } from "./render";
+export type { RenderBackgroundOptions } from "./rendering/background";
+export {
+	RenderBackgroundOptionsSchema,
+	renderBackground,
+} from "./rendering/background";
+export type {
+	BorderCharset,
+	BorderColorConfig,
+	BorderSides,
+	BorderStyleName,
+	RenderBorderOptions,
+} from "./rendering/border";
+export {
+	BORDER_STYLES,
+	BorderCharsetSchema,
+	BorderColorConfigSchema,
+	BorderSidesSchema,
+	BorderStyleNameSchema,
+	RenderBorderOptionsSchema,
+	renderBorder,
+	resolveBorderCharset,
+} from "./rendering/border";
+export type { DiffConfig, DiffOutput, DiffResult } from "./rendering/diff";
+export {
+	computeUpdate,
+	DiffConfigSchema,
+	DiffOutputSchema,
+	DiffResultSchema,
+	diffOutput,
+	generateIncrementalUpdate,
+} from "./rendering/diff";
+export type {
+	ClipRegion,
+	OutputBuffer,
+	OutputTransformer,
+	WriteOptions,
+} from "./rendering/output-buffer";
+export {
+	ClipRegionSchema,
+	createOutputBuffer,
+	getBufferContent,
+	getBufferHeight,
+	popClip,
+	pushClip,
+	WriteOptionsSchema,
+	writeToBuffer,
+} from "./rendering/output-buffer";
 export {
 	type AlignItems,
 	AlignItemsSchema,
@@ -252,43 +299,5 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
-export type { RenderBackgroundOptions } from "./rendering/background";
-export {
-	RenderBackgroundOptionsSchema,
-	renderBackground,
-} from "./rendering/background";
-export type {
-	BorderCharset,
-	BorderColorConfig,
-	BorderSides,
-	BorderStyleName,
-	RenderBorderOptions,
-} from "./rendering/border";
-export {
-	BORDER_STYLES,
-	BorderCharsetSchema,
-	BorderColorConfigSchema,
-	BorderSidesSchema,
-	BorderStyleNameSchema,
-	RenderBorderOptionsSchema,
-	renderBorder,
-	resolveBorderCharset,
-} from "./rendering/border";
-export type {
-	ClipRegion,
-	OutputBuffer,
-	OutputTransformer,
-	WriteOptions,
-} from "./rendering/output-buffer";
-export {
-	ClipRegionSchema,
-	WriteOptionsSchema,
-	createOutputBuffer,
-	getBufferContent,
-	getBufferHeight,
-	popClip,
-	pushClip,
-	writeToBuffer,
-} from "./rendering/output-buffer";
 export type { RenderThrottle, ThrottleConfig } from "./throttle";
 export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
