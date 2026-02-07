@@ -1,34 +1,3 @@
-export type {
-	AriaRole,
-	AriaState,
-} from "./accessibility/aria";
-export {
-	AriaRoleSchema,
-	AriaStateSchema,
-	extractAriaProps,
-	formatAriaAnnotation,
-	isAriaHidden,
-} from "./accessibility/aria";
-export type {
-	ScreenReaderNodeRegistry,
-	ScreenReaderRenderOptions,
-} from "./accessibility/render-screen-reader";
-export {
-	renderNodeToScreenReaderOutput,
-	ScreenReaderRenderOptionsSchema,
-} from "./accessibility/render-screen-reader";
-export type {
-	ScreenReaderConfig,
-	ScreenReaderOutputState,
-} from "./accessibility/screen-reader-output";
-export {
-	appendScreenReaderLine,
-	createScreenReaderOutputState,
-	detectScreenReaderMode,
-	getScreenReaderText,
-	ScreenReaderConfigSchema,
-	stripAnsiForScreenReader,
-} from "./accessibility/screen-reader-output";
 export type { AppInstance, CreateAppOptions } from "./app";
 export { createApp } from "./app";
 export {
@@ -76,22 +45,6 @@ export {
 	type BoxComponentProps,
 	BoxComponentPropsSchema,
 } from "./components/Box";
-export type {
-	ErrorBoundaryProps,
-	ErrorBoundaryState,
-} from "./components/ErrorBoundary";
-export { ErrorBoundary } from "./components/ErrorBoundary";
-export type {
-	ErrorOverviewProps,
-	StackFrame,
-} from "./components/ErrorOverview";
-export {
-	ErrorOverview,
-	ErrorOverviewPropsSchema,
-	formatErrorForDisplay,
-	formatStackFrame,
-	parseStackTrace,
-} from "./components/ErrorOverview";
 export {
 	Newline,
 	type NewlineProps,
@@ -124,28 +77,8 @@ export {
 	type TransformProps,
 	TransformPropsSchema,
 } from "./components/Transform";
-export type {
-	VirtualizedListHandle,
-	VirtualizedListProps,
-} from "./components/VirtualizedList";
-export {
-	VirtualizedList,
-	VirtualizedListPropsSchema,
-} from "./components/VirtualizedList";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
-export type {
-	ConsoleCallback,
-	ConsoleMethodName,
-	ConsolePatchConfig,
-	ConsolePatchState,
-} from "./console-patch";
-export {
-	ConsolePatchConfigSchema,
-	isConsolePatched,
-	patchConsole,
-	restoreConsole,
-} from "./console-patch";
 export type { AppContextValue } from "./contexts/app";
 export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type { StderrContextValue } from "./contexts/stderr";
@@ -211,18 +144,6 @@ export { UseInputOptionsSchema, useInput } from "./hooks/use-input";
 export { useStderr } from "./hooks/use-stderr";
 export { useStdin } from "./hooks/use-stdin";
 export { useStdout } from "./hooks/use-stdout";
-export type {
-	UseVirtualizedListOptions,
-	VirtualizedListResult,
-	WindowState,
-} from "./hooks/use-virtualized-list";
-export {
-	calculateWindow,
-	getScrollFraction,
-	renderScrollIndicator,
-	UseVirtualizedListOptionsSchema,
-	useVirtualizedList,
-} from "./hooks/use-virtualized-list";
 export type {
 	BoxProps,
 	Container,
@@ -362,26 +283,6 @@ export {
 	ZERO_MARGIN,
 	ZERO_PADDING,
 } from "./layout/spacing";
-export type { CILogUpdate, CIModeConfig, CIOutputState } from "./modes/ci";
-export {
-	CIModeConfigSchema,
-	createCILogUpdate,
-	createCIOutputState,
-	detectCIEnvironment,
-	isCIMode,
-	isInteractiveTerminal,
-} from "./modes/ci";
-export type {
-	DebugLogUpdate,
-	DebugModeConfig,
-	DebugOutputState,
-} from "./modes/debug";
-export {
-	createDebugLogUpdate,
-	createDebugOutputState,
-	DebugModeConfigSchema,
-	isDebugMode,
-} from "./modes/debug";
 export {
 	createContainer,
 	createRootContainer,
