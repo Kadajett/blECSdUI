@@ -1,3 +1,5 @@
+export type { AppInstance, CreateAppOptions } from "./app";
+export { createApp } from "./app";
 export {
 	type BasicColor,
 	blecsdParseColor,
@@ -27,6 +29,7 @@ export {
 	validatedParseColor,
 	validatedUnpackColor,
 	visibleLength,
-} from "./color.js";
-export type { AppConfig } from "./config.js";
-export { AppConfigSchema, createDefaultConfig } from "./config.js";
+} from "./color";
+export type { AppConfig } from "./config";
+export { AppConfigSchema, createDefaultConfig } from "./config";
+export { render } from "./render";

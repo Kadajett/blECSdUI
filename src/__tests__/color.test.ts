@@ -18,7 +18,7 @@ import {
 	validatedParseColor,
 	validatedUnpackColor,
 	visibleLength,
-} from "../color.js";
+} from "../color";
 
 // ---------------------------------------------------------------------------
 // ColorSpecSchema validation
