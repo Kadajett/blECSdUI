@@ -58,6 +58,27 @@ export {
 } from "./components/Text";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type {
+	ElementNode,
+	NodeType,
+	TextNode as TreeTextNode,
+	TreeNode,
+	TreeVisitor,
+} from "./element-tree";
+export {
+	appendChild as treeAppendChild,
+	createElementNode,
+	createTextNode as treeCreateTextNode,
+	getChildren as treeGetChildren,
+	getParent as treeGetParent,
+	insertBefore as treeInsertBefore,
+	markNodeDirty,
+	NodeTypeSchema,
+	removeChild as treeRemoveChild,
+	updateTextNode,
+	walkTree,
+	walkTreeBottomUp,
+} from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export type {
@@ -84,6 +105,15 @@ export {
 	removeChild,
 	resetAfterCommit,
 } from "./host-config";
+export type { Key, KeypressResult } from "./input/parse-keypress";
+export {
+	KeypressResultSchema,
+	KeySchema,
+	parseKeypress,
+	parseKeypressBuffer,
+} from "./input/parse-keypress";
+export type { RawModeManager } from "./input/raw-mode";
+export { createRawModeManager } from "./input/raw-mode";
 export {
 	deleteInstance,
 	getInstance,
@@ -146,8 +176,8 @@ export {
 export {
 	type BorderEdges,
 	BorderEdgesSchema,
-	type ClipRegion,
-	ClipRegionSchema,
+	type ClipRegion as OverflowClipRegion,
+	ClipRegionSchema as OverflowClipRegionSchema,
 	clipTextContent,
 	clipTextLine,
 	computeClipRegion,
@@ -197,6 +227,44 @@ export {
 	renderElement,
 } from "./reconciler";
 export { render } from "./render";
+export type { RenderBackgroundOptions } from "./rendering/background";
+export {
+	RenderBackgroundOptionsSchema,
+	renderBackground,
+} from "./rendering/background";
+export type {
+	BorderCharset,
+	BorderColorConfig,
+	BorderSides,
+	BorderStyleName,
+	RenderBorderOptions,
+} from "./rendering/border";
+export {
+	BORDER_STYLES,
+	BorderCharsetSchema,
+	BorderColorConfigSchema,
+	BorderSidesSchema,
+	BorderStyleNameSchema,
+	RenderBorderOptionsSchema,
+	renderBorder,
+	resolveBorderCharset,
+} from "./rendering/border";
+export type {
+	ClipRegion,
+	OutputBuffer,
+	OutputTransformer,
+	WriteOptions,
+} from "./rendering/output-buffer";
+export {
+	ClipRegionSchema,
+	createOutputBuffer,
+	getBufferContent,
+	getBufferHeight,
+	popClip,
+	pushClip,
+	WriteOptionsSchema,
+	writeToBuffer,
+} from "./rendering/output-buffer";
 export {
 	type AlignItems,
 	AlignItemsSchema,
