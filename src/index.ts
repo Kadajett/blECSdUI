@@ -102,6 +102,62 @@ export {
 	setInstance,
 } from "./instances";
 export {
+	applyConstraints,
+	applyHeightConstraints,
+	type BoxEdges,
+	BoxEdgesSchema,
+	computeBorderBoxSize,
+	computeContentSize,
+	constrainFlexSize,
+	type DimensionConstraints,
+	DimensionConstraintsSchema,
+	type DimensionValue,
+	DimensionValueSchema,
+	type ResolvedDimensions,
+	ResolvedDimensionsSchema,
+	resolveDimension,
+	resolveElementDimensions,
+	resolveFlexBasis,
+	resolvePercentage,
+	ZERO_EDGES,
+} from "./layout/dimensions";
+export {
+	type ChildLayout,
+	ChildLayoutSchema,
+	calculateFlexLayout,
+	calculateLineCrossSize,
+	createFlexLines,
+	type FlexContainer,
+	FlexContainerSchema,
+	type FlexItem,
+	FlexItemSchema,
+	getCrossGap,
+	getMainGap,
+	isReversedDirection,
+	isRowDirection,
+	positionItemOnCrossAxis,
+	positionLinesOnCrossAxis,
+	positionOnMainAxis,
+	resolveFlexSizes,
+} from "./layout/flex";
+export {
+	adjustLayoutForSpacing,
+	type ContentArea,
+	ContentAreaSchema,
+	computeMarginBetween,
+	getContentArea,
+	getCrossAxisMargins,
+	getMainAxisMargins,
+	getPaddingOffset,
+	inflateBaseSize,
+	type Margin,
+	MarginSchema,
+	type Padding,
+	PaddingSchema,
+	ZERO_MARGIN,
+	ZERO_PADDING,
+} from "./layout/spacing";
+export {
 	createContainer,
 	createRootContainer,
 	reconciler,
@@ -133,6 +189,28 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export type { RenderBackgroundOptions } from "./rendering/background";
+export {
+	RenderBackgroundOptionsSchema,
+	renderBackground,
+} from "./rendering/background";
+export type {
+	BorderCharset,
+	BorderColorConfig,
+	BorderSides,
+	BorderStyleName,
+	RenderBorderOptions,
+} from "./rendering/border";
+export {
+	BORDER_STYLES,
+	BorderCharsetSchema,
+	BorderColorConfigSchema,
+	BorderSidesSchema,
+	BorderStyleNameSchema,
+	RenderBorderOptionsSchema,
+	renderBorder,
+	resolveBorderCharset,
+} from "./rendering/border";
 export type {
 	ClipRegion,
 	OutputBuffer,
