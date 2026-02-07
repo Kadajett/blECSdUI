@@ -79,6 +79,8 @@ export {
 } from "./components/Transform";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { StdinContextValue } from "./contexts/stdin";
+export { StdinContext } from "./contexts/stdin";
 export type { StderrContextValue } from "./contexts/stderr";
 export { StderrContext } from "./contexts/stderr";
 export type { StdoutContextValue } from "./contexts/stdout";
@@ -140,6 +142,9 @@ export type { UseFocusOptions, UseFocusResult } from "./hooks/use-focus";
 export { UseFocusOptionsSchema, useFocus } from "./hooks/use-focus";
 export type { UseFocusManagerResult } from "./hooks/use-focus-manager";
 export { useFocusManager } from "./hooks/use-focus-manager";
+export type { InputHandler, UseInputOptions } from "./hooks/use-input";
+export { UseInputOptionsSchema, useInput } from "./hooks/use-input";
+export { useStdin } from "./hooks/use-stdin";
 export { useStderr } from "./hooks/use-stderr";
 export { useStdout } from "./hooks/use-stdout";
 export type {
