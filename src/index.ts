@@ -249,6 +249,15 @@ export {
 	renderBorder,
 	resolveBorderCharset,
 } from "./rendering/border";
+export type { DiffConfig, DiffOutput, DiffResult } from "./rendering/diff";
+export {
+	computeUpdate,
+	DiffConfigSchema,
+	DiffOutputSchema,
+	DiffResultSchema,
+	diffOutput,
+	generateIncrementalUpdate,
+} from "./rendering/diff";
 export type {
 	ClipRegion,
 	OutputBuffer,
