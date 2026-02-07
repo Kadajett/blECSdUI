@@ -39,6 +39,8 @@ export {
 } from "./color";
 export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
+export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
+export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
 export type {
 	BoxProps,
 	Container,
@@ -48,7 +50,6 @@ export type {
 	TextInstance,
 	TextProps,
 } from "./host-config";
-
 export {
 	appendChild,
 	commitTextUpdate,
@@ -64,6 +65,12 @@ export {
 	removeChild,
 	resetAfterCommit,
 } from "./host-config";
+export {
+	deleteInstance,
+	getInstance,
+	hasInstance,
+	setInstance,
+} from "./instances";
 export {
 	createContainer,
 	createRootContainer,
@@ -97,3 +104,5 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export type { RenderThrottle, ThrottleConfig } from "./throttle";
+export { createRenderThrottle, ThrottleConfigSchema } from "./throttle";
