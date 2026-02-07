@@ -1,0 +1,43 @@
+{
+	"name": "blecsdui",
+	"version": "1.0.0",
+	"description": "Terminal app framework built on blECSd",
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsx watch src/index.ts",
+		"start": "node dist/index.js",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kadajett/blECSdUI.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kadajett/blECSdUI/issues"
+	},
+	"homepage": "https://github.com/Kadajett/blECSdUI#readme",
+	"dependencies": {
+		"blecsd": "^0.2.0",
+		"react": "^19.0.0",
+		"react-reconciler": "^0.32.0",
+		"zod": "^3.24.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.0.0",
+		"@types/react": "^19.0.0",
+		"@vitest/coverage-v8": "^3.0.0",
+		"tsx": "^4.19.0",
+		"typescript": "^5.7.0",
+		"vitest": "^3.0.0"
+	}
+}
