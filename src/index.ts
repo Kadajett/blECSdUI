@@ -81,6 +81,14 @@ export type { AppConfig } from "./config";
 export { AppConfigSchema, createDefaultConfig } from "./config";
 export type { StdinContextValue } from "./contexts/stdin";
 export { StdinContext } from "./contexts/stdin";
+export type { StderrContextValue } from "./contexts/stderr";
+export { StderrContext } from "./contexts/stderr";
+export type { StdoutContextValue } from "./contexts/stdout";
+export { StdoutContext } from "./contexts/stdout";
+export type { StdinContextValue } from "./contexts/stdin";
+export { StdinContext } from "./contexts/stdin";
+export type { AppContextValue } from "./contexts/app";
+export { AppContext, AppContextValueSchema } from "./contexts/app";
 export type {
 	ElementNode,
 	NodeType,
@@ -104,6 +112,8 @@ export {
 } from "./element-tree";
 export type { ExitHandler, ExitHandlerOptions } from "./exit-handler";
 export { createExitHandler, ExitHandlerOptionsSchema } from "./exit-handler";
+export { useStdin } from "./hooks/use-stdin";
+export { useApp } from "./hooks/use-app";
 export type {
 	FocusAction,
 	FocusEntry,
@@ -135,6 +145,8 @@ export { useFocusManager } from "./hooks/use-focus-manager";
 export type { InputHandler, UseInputOptions } from "./hooks/use-input";
 export { UseInputOptionsSchema, useInput } from "./hooks/use-input";
 export { useStdin } from "./hooks/use-stdin";
+export { useStderr } from "./hooks/use-stderr";
+export { useStdout } from "./hooks/use-stdout";
 export type {
 	BoxProps,
 	Container,
