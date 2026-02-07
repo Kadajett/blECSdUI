@@ -1,6 +1,13 @@
 export type { AppInstance, CreateAppOptions } from "./app";
 export { createApp } from "./app";
 export {
+	applyStyles,
+	type ResolvedSpacing,
+	type ResolvedStyles,
+	resolveShorthands,
+	resolveSpacing,
+} from "./apply-styles";
+export {
 	type BasicColor,
 	blecsdParseColor,
 	type Color,
