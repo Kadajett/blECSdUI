@@ -133,6 +133,11 @@ export {
 	type TextWrap,
 	TextWrapSchema,
 } from "./styles";
+export type { RenderBackgroundOptions } from "./rendering/background";
+export {
+	RenderBackgroundOptionsSchema,
+	renderBackground,
+} from "./rendering/background";
 export type {
 	ClipRegion,
 	OutputBuffer,
